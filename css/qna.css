@@ -1,0 +1,42 @@
+#qna{
+    display: none;
+}
+
+.qBox{
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 24px;
+    width: 80%;
+}
+
+.answerList{
+    background-color: whitesmoke;
+    border-radius: 20px;
+    display: block;
+    width: 80%;
+    border: 0px;
+    font-size: 20px;
+
+}
+
+.answerList:hover, .answerList:focus{
+    background-color: yellowgreen;
+    color: black;
+
+}
+
+.status{
+    height: 20px;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.statusBar{
+    border-radius: 20px;
+    height: 100%;
+   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fcecfc+0,fba6e1+61,fd89d7+70,fba6e1+94,ff7cd8+98;Pink+Gloss+%232 */
+    background: linear-gradient(to bottom,  #fcecfc 0%,#fba6e1 61%,#fd89d7 70%,#fba6e1 94%,#ff7cd8 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
