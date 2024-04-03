@@ -1,0 +1,20 @@
+#result{
+    display: none;
+    background-color: white;
+    width: 80%;
+    text-align : center;
+    border-radius: 20px;
+}
+
+.resultDesc{
+    font-size: 25px;
+    text-align: left;
+}
+
+.kakao{
+    color: brown;
+    background-color: #FEE500;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 20px;
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/qna.css">
     <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/result.css">
     <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,11 +20,12 @@
                 <img src="./img/main.jpg" alt="mainImage", class="img-fluid mt-3". id="mainImage">
             </div>
                 <p class="mt-3">
-                    많이 틀리면 그날 싸울준비
+                    많이 틀리면 싸울준비
                 </p>
         
                 <button type="button" class="btn btn-outline-danger mt-3" 
                 onclick="js:begin()">시험응시</button>
+                <p class="mt-5" id = "copy">Made By 재혁킴(BE)</p>
         </h1>
     </section>
     </div>
@@ -36,8 +38,15 @@
             
         </div>
     </sectionid>
-    <section id="result">
+    <section id="result", class="mx-auto mt-5 py-5 pt-5">
+        <h1>시험 결과!!!
+            <div class="resultName" >
 
+            </div>
+            <div id ="resultImg", class="img-fluid mt-3"></div>
+            <div class="resultDesc" class = "mt-3"></div>
+            
+            <button type="button", class="kakao mt-3" >공유하기</button>
     </section>
     <script src="./js/start.js" charset="UTF-8"></script>
     <script src="./js/data.js" charset="UTF-8"></script>

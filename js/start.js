@@ -1,11 +1,78 @@
 const main = document.querySelector('#main');
 const qna = document.querySelector('#qna');
-const endPoint = 12
-const select= [];
+const result = document.querySelector('#result');
+const endPoint = 10
+const select= [0,0];
 
+function calResult(){
+    var pointArray = [
+        {name : 'f', value :0, key:0},
+        {name : 's', value :0 , key: 1}
+    ]
+
+    for(let i = 0; i < endPoint; i++){
+        var target = qnaList[i].a[select[i]];
+        for(let j = 0; j<target.type.length; j++){
+            for(let k = 0; k < pointArray.length; k++){
+                if(target.type[j] == pointArray[k].name){
+                    pointArray[k].value +=1;
+        }
+    }
+    }
+    }
+    var resultArray = pointArray.sort(function(a,b){
+        if(a.value < b.value){
+            return -1;
+        }
+        if(a.value > b.value){
+            return 1;
+        }
+        return 0;
+    });
+    if(pointArray.find(item => item.name === 'f').value >= 2){
+        let resultWord = resultArray.find(item => item.name === 'f');
+        console.log(resultWord);
+        console.log(resultWord.key, resultWord);
+        return resultWord;
+    }
+    else{
+        let resultWord = resultArray.find(item => item.name === 's');
+        console.log(resultWord);
+        return resultWord;
+    }
+    
+    }
+
+function setResult(){
+    let result = calResult();
+    const resultName = document.querySelector('.resultName');
+    resultName.innerHTML = resultList[result.key].name;
+
+    var resultImg = document.createElement('img');
+    const imgDiv = document.querySelector('#resultImg');
+    
+    var imgUrl = 'img/image-' + result.key + '.jpg';
+    resultImg.src = imgUrl;
+    resultImg.classList.add('img-fluid');
+    imgDiv.appendChild(resultImg);
+
+    const resultDesc = document.querySelector('.resultDesc');
+    resultDesc.innerHTML = resultList[result.key].desc;
+
+}
 
 function goResult(){
+    qna.style.WebkitAnimation = "fadeOut 1s";
+    qna.style.animation = "fadeOut 1s";
 
+    setTimeout(() => {
+        result.style.WebkitAnimation = "fadeIn 1s";
+        result.style.animation = "fadeIn 1s";
+        setTimeout(() => {
+         qna.style.display = "none";
+         result.style.display = "block";
+        },450)});
+        setResult();
 }
 
 function addAnswer(answerText ,qIdx, idx) {
@@ -37,8 +104,9 @@ function addAnswer(answerText ,qIdx, idx) {
 }
 
 function goNext(qIdx) {
-    if(++qIdx === endPoint){
+    if(qIdx === endPoint){
         goResult();
+        return;
     }
     var q = document.querySelector('.qBox');
     q.innerHTML = qnaList[qIdx].q;
@@ -66,3 +134,4 @@ function begin() {
         goNext(qIdx);
     },450);
 }
+
