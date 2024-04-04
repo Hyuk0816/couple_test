@@ -4,6 +4,7 @@ const result = document.querySelector('#result');
 const endPoint = 10
 const select= [0,0];
 
+
 function calResult(){
     var pointArray = [
         {name : 'f', value :0, key:0},
@@ -31,13 +32,10 @@ function calResult(){
     });
     if(pointArray.find(item => item.name === 'f').value >= 2){
         let resultWord = resultArray.find(item => item.name === 'f');
-        console.log(resultWord);
-        console.log(resultWord.key, resultWord);
         return resultWord;
     }
     else{
         let resultWord = resultArray.find(item => item.name === 's');
-        console.log(resultWord);
         return resultWord;
     }
     
@@ -47,6 +45,7 @@ function setResult(){
     let result = calResult();
     const resultName = document.querySelector('.resultName');
     resultName.innerHTML = resultList[result.key].name;
+    console.log(result.value  + " set Result");
 
     var resultImg = document.createElement('img');
     const imgDiv = document.querySelector('#resultImg');
@@ -59,7 +58,11 @@ function setResult(){
     const resultDesc = document.querySelector('.resultDesc');
     resultDesc.innerHTML = resultList[result.key].desc;
 
+    const resultScore = document.querySelector('.score');
+    resultScore.innerHTML = result.value + "개 맞히셨습니다!";
+
 }
+
 
 function goResult(){
     qna.style.WebkitAnimation = "fadeOut 1s";
