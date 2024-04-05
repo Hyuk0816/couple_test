@@ -21,21 +21,21 @@ function calResult(){
     }
     }
     }
-    var resultArray = pointArray.sort(function(a,b){
-        if(a.value < b.value){
-            return -1;
-        }
-        if(a.value > b.value){
-            return 1;
-        }
-        return 0;
-    });
+    // var resultArray = pointArray.sort(function(a,b){
+    //     if(a.value < b.value){
+    //         return -1;
+    //     }
+    //     if(a.value > b.value){
+    //         return 1;
+    //     }
+    //     return 0;
+    // });
     if(pointArray.find(item => item.name === 'f').value >= 2){
-        let resultWord = resultArray.find(item => item.name === 'f');
+        let resultWord = pointArray.find(item => item.name === 'f');
         return resultWord;
     }
     else{
-        let resultWord = resultArray.find(item => item.name === 's');
+        let resultWord = pointArray.find(item => item.name === 's');
         return resultWord;
     }
     
